@@ -173,6 +173,7 @@ final class PhabricatorDatabaseSetupCheck extends PhabricatorSetupCheck {
 
     switch ($ref->getReplicaStatus()) {
       case PhabricatorDatabaseRef::REPLICATION_MASTER_REPLICA:
+        break;  // http://blog.weisiliang.com/?p=250
         $message = pht(
           'Database host "%s" is configured as a master, but is replicating '.
           'another host. This is dangerous and can mangle or destroy data. '.
